@@ -14,19 +14,30 @@ As a simple control point dashboard, an application performs the following tasks
 
 1. Download application files from GitHub using `git clone` command:
 ```
-git clone https://github.com/SergIvo/dvmn-django-orm-watching-storage
+git clone https://github.com/SergIvo/django-orm-local
 ```
-2. Use `pip` package manager to install dependencies. Create virtual environment first to avoid conflicts with other versions of the same packages:
+2. Before installing necessary packages, create virtual environment to avoid conflicts with other versions of the same packages:
 ```
 python -m venv venv
 ```
-Then install dependencies from "requirements.txt" in created virtual environment:
+Then install dependencies from "requirements.txt" in created virtual environment. Use `pip` package manager to install packages listed in `requirements.txt`:
 ```
 pip install -r requirements.txt
 ```
-3. Run "main.py" to start the application. Then you should be able to open it in a web browser by address [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
+3. Before running the application, you should set some environment variables, like database connection setting or django secret key:
 ```
-python main.py
+export DB_HOST='Database host name'
+export DB_PORT='Port on which database accepts connection'
+export DB_NAME='Name of the database'
+export DB_USER='Username for database user'
+export DB_PASSWORD='Password for database user'
+export DJANGO_SECRET_KEY='Randomly generated secret key'
+export DEBUG='Set "true" if you want to run application in a debug mode'
 ```
-4. Add data required to establish connection with database, as described in [the lesson](https://dvmn.org/modules/django-orm/lesson/watching-storage/)
+If you are following the same course, you can get database settings from [the lesson](https://dvmn.org/modules/django-orm/lesson/watching-storage/)
 
+If you don't want to set environment variables manually, you can create [.env](https://pypi.org/project/python-dotenv/#getting-started) file and store all variables in it.
+4. Run "manage.py runserver" to start the application. Then you should be able to open it in a web browser by address [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
+```
+python manage.py runserver
+```
