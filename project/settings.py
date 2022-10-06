@@ -18,7 +18,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='082d55451f062d51b72296dd500c369b')
 
 DEBUG = env.bool('DEBUG', default=False)
 

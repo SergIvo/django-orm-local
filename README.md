@@ -31,11 +31,14 @@ export DB_PORT='Port on which database accepts connection'
 export DB_NAME='Name of the database'
 export DB_USER='Username for database user'
 export DB_PASSWORD='Password for database user'
-export DJANGO_SECRET_KEY='Randomly generated secret key'
-export DEBUG='Set "true" if you want to run application in a debug mode'
 ```
 If you are following the same course, you can get database settings from [the lesson](https://dvmn.org/modules/django-orm/lesson/watching-storage/)
 
+You can also set your own secret key for Django and switch the debug mode on, as it turned off by default: 
+```
+export DJANGO_SECRET_KEY='Your secret key'
+export DEBUG='Set "true" if you want to run application in a debug mode'
+```
 If you don't want to set environment variables manually, you can create [.env](https://pypi.org/project/python-dotenv/#getting-started) file and store all variables in it.
 4. Run "manage.py runserver" to start the application. Then you should be able to open it in a web browser by address [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
 ```
