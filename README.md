@@ -39,6 +39,10 @@ You can also set your own secret key for Django and switch the debug mode on, as
 export DJANGO_SECRET_KEY='Your secret key'
 export DEBUG='Set "true" if you want to run application in a debug mode'
 ```
+If you're going to run this application on some remote host, you should also set allowed hosts as an environment variable, as shown below:
+```
+export ALLOWED_HOSTS='mysite.com,myanothersite.com'
+```
 If you don't want to set environment variables manually, you can create [.env](https://pypi.org/project/python-dotenv/#getting-started) file and store all variables in it.
 4. Run "manage.py runserver" to start the application. Then you should be able to open it in a web browser by address [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
 ```
